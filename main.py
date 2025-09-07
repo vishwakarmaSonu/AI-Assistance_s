@@ -17,7 +17,7 @@ import streamlit as st
 
 load_dotenv()
 
-api_key = os.getenv("GROQ_API_KEY")
+api_key = "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"
 
 # llm for pdf
 
@@ -255,3 +255,4 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
