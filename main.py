@@ -1,7 +1,6 @@
 import os
 from langchain_groq import ChatGroq
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 
 import pandas as pd
@@ -18,7 +17,7 @@ api_key = "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"
 # llm for pdf
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-
+from langchain_community.vectorstores import FAISS
 new_vector_store = FAISS.load_local(
     "faiss_index",
     embeddings,
@@ -235,6 +234,7 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
 
 
