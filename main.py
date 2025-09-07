@@ -20,24 +20,8 @@ import streamlit as st
 api_key = "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"
 
 # llm for pdf
-
-pdf_path = r"F:\Vishwakarma_Art\AI agent\vishwakarma art.pdf"
-loader = PyMuPDFLoader(pdf_path)
-documents = loader.load()
-
-text_splitter= RecursiveCharacterTextSplitter(
-    chunk_size =200,
-    chunk_overlap=70,
-)
-
-docs = text_splitter.split_documents(documents)
-
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-
-# vector_store = FAISS.from_documents(docs , embedding=embeddings)
-
-# vector_store.save_local("faiss_index")
 
 new_vector_store = FAISS.load_local(
     "faiss_index",
@@ -255,5 +239,6 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
 
