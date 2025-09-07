@@ -1,8 +1,5 @@
 import os
-# from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from langchain.document_loaders import PyMuPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
@@ -15,7 +12,6 @@ from typing import TypedDict
 import streamlit as st
 
 
-# load_dotenv()
 
 api_key = "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"
 
@@ -219,7 +215,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.title("🪵 Vishwakarma Art AI Assistant")
+st.title("🪵 Vishwakarma Arts AI Assistant")
 st.markdown(
     """
     Welcome to **Vishwakarma Art**, your trusted partner in *handcrafted wooden furniture & decor*.  
@@ -239,6 +235,7 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
 
 
