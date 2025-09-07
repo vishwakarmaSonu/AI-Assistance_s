@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -15,7 +15,7 @@ from typing import TypedDict
 import streamlit as st
 
 
-load_dotenv()
+# load_dotenv()
 
 api_key = "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"
 
@@ -255,4 +255,5 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
