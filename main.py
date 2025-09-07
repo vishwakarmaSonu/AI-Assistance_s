@@ -19,7 +19,7 @@ embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 from langchain_community.vectorstores import FAISS
 new_vector_store = FAISS.load_local(
-    "faiss_index",
+    "https://github.com/vishwakarmaSonu/AI-Assistance_s/tree/main/faiss_index",
     embeddings,
     allow_dangerous_deserialization=True   # required in newer LangChain versions
 )
@@ -234,6 +234,7 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
 
 
