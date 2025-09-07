@@ -5,6 +5,7 @@ from langchain.chains import RetrievalQA
 
 import pandas as pd
 from langchain.prompts import PromptTemplate
+from langchain_community.vectorstores import FAISS
 
 from langgraph.graph import StateGraph,END
 from typing import TypedDict
@@ -17,7 +18,6 @@ api_key = "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"
 # llm for pdf
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-from langchain_community.vectorstores import FAISS
 new_vector_store = FAISS.load_local(
     "https://github.com/vishwakarmaSonu/AI-Assistance_s/tree/main/faiss_index",
     embeddings,
@@ -234,6 +234,7 @@ if st.button("✨ Get Answer"):
         st.success(result["response"])
     else:
         st.warning("⚠️ Please enter a query to continue.")
+
 
 
 
